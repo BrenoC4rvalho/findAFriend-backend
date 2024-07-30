@@ -5,6 +5,10 @@ import { Decimal } from '@prisma/client/runtime/library'
 export class InMemoryOrgsRepository implements OrgsRepository {
     public items: Org[] = []
 
+    async findById(id: string): Promise<Org | null> {
+        return this.items.find((org) => org.id === id) || null
+    }
+
     async findByEmail(email: string): Promise<Org | null> {
         return this.items.find((org) => org.email === email) || null
     }
