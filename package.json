@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "test": "vitest run --dir src/use-cases",
+    "test:watch": "vitest --dir src/use-cases"
   },
   "keywords": [],
   "author": "",
@@ -11,11 +13,14 @@
   "description": "",
   "dependencies": {
     "@prisma/client": "^5.17.0",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "fastify": "^4.28.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^22.0.0",
     "@types/supertest": "^6.0.2",
     "prisma": "^5.17.0",
