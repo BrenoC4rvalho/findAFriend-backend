@@ -19,7 +19,7 @@ export function makeOrg(overwrite?: Overwrite) {
     password: overwrite?.password ?? faker.internet.password(),
     state: faker.location.state(),
     street: faker.location.street(),
-    number: randomInt(1, 100),
+    number: randomInt(1, 100).toString(),
     whatsapp: faker.phone.number(),
   }
 }
